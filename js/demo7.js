@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- *
+ * 
  * Copyright 2018, Codrops
  * http://www.codrops.com
  */
@@ -13,7 +13,7 @@
  * Equation of a line.
  */
 const lineEq = (y2, y1, x2, x1, currentVal) => {
-    // y = mx + b
+    // y = mx + b 
     var m = (y2 - y1) / (x2 - x1), b = y1 - m * x1;
     return m * currentVal + b;
 };
@@ -80,7 +80,7 @@ new Nearby(iconScrollButton, {
     onProgress: (distance) => {
         const time = lineEq(scrollInterval.from, scrollInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
         tweenScroll.timeScale(Math.min(Math.max(time,scrollInterval.from),scrollInterval.to));
-
+        
         if ( distance < distanceThreshold.max && distance >= distanceThreshold.min && stateScroll !== 'running' ) {
             tweenScroll.play();
             stateScroll = 'running';
@@ -125,7 +125,7 @@ new Nearby(link2, {
     onProgress: (distance) => {
         const time = lineEq(waveInterval.from, waveInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
         tweenWave.timeScale(Math.min(Math.max(time,waveInterval.from),waveInterval.to));
-
+        
         if ( distance < distanceThreshold.max && distance >= distanceThreshold.min && stateWave !== 'running' ) {
             tweenWave.play();
             stateWave = 'running';
